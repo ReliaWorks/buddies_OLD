@@ -1,0 +1,15 @@
+[
+  {
+    "id": 0,
+    "first_name": "Gabi",
+    "last_name": "Gryczynski"
+    "age": "36"
+    "activities": {
+      "activity_id": "0",
+      "activity_name": "Running",
+      "mile_pace": "9:30",
+      "running_type": "road",
+      "style": "stop and smell the roses"
+    }
+  }
+]
