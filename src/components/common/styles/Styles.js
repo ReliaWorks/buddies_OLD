@@ -12,6 +12,15 @@ export const buttonIconStyle = {
   height: 20
 };
 
+export const buttonStyle = {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: 'red',
+    marginLeft: 5,
+    marginRight: 5
+};
+
 export const containerStyle = {
   flex: 1,
   justifyContent: 'center',
