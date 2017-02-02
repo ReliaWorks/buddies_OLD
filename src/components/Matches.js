@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image, View, Text } from 'react-native';
 import { containerStyle, textStyle } from './common/styles/Styles';
-import { Button, Card, CardItem } from './common';
 
 const profileImage = require('./common/img/runningbuddy.png');
 
@@ -10,9 +9,6 @@ class Matches extends Component {
   renderConversation() {
     const {
         convoContainerStyle,
-        imageStyle,
-        headerContentStyle,
-//        thumbnailContainerStyle,
         headerTextStyle
        } = styles;
 
