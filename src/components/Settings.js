@@ -32,7 +32,7 @@ class Settings extends Component {
         <LoginButton
           onLogoutFinished={() => {
             console.log('In Settings, onLogoutFinished');
-            Actions.login();
+            Actions.root();
           }}
         />
       </View>
