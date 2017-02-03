@@ -2,8 +2,6 @@ import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { convoThumbnailStyle, textStyle } from './styles';
 
-const profileImage = require('./img/runningbuddy.png');
-
 const Conversation = (props) => (
     <View style={styles.container}>
       <Image
