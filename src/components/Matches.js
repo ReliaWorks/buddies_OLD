@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import { Image, View, Text } from 'react-native';
-import { containerStyle, textStyle } from './common/styles/Styles';
+import { Image, ListView, Text, View } from 'react-native';
+import { containerStyle, convoThumbnailStyle, textStyle } from './common/styles/Styles';
+import { Conversation } from './common';
+import sampleData from './demo-data/demoData.js';
 
 const profileImage = require('./common/img/runningbuddy.png');
 
 class Matches extends Component {
+  constructor() {
+    super();
+
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    this.state = {
+      dataSource: ds.cloneWithRows(sampleData),
+    };
+  }
 
   renderConversation() {
     const {
@@ -15,7 +25,7 @@ class Matches extends Component {
     return (
           <View style={{ flexDirection: 'row' }}>
             <Image
-              style={styles.convoThumbnailStyle}
+              style={convoThumbnailStyle}
               source={profileImage}
             />
             <View style={convoContainerStyle}>
@@ -65,19 +75,30 @@ class Matches extends Component {
           }}
         >
           <Text style={textStyle}>Conversations</Text>
-          {this.renderConversation()}
-          {this.renderConversation()}
-          {this.renderConversation()}
-          {this.renderConversation()}
-          {this.renderConversation()}
+          <ListView
+            style={styles.container}
+            dataSource={this.state.dataSource}
+            renderRow={(data) => <Conversation {...data} />
+
+            }
+          />
         </View>
       </View>
     );
   }
 }
 
+//{this.renderConversation()}
+//{this.renderConversation()}
+//{this.renderConversation()}
+//{this.renderConversation()}
+
 
 const styles = {
+  container: {
+    flex: 1,
+    marginTop: 10,
+  },
   convoContainerStyle: {
     borderWidth: 1,
     borderRadius: 2,
@@ -106,12 +127,6 @@ const styles = {
     height: 75,
     width: 75,
     marginRight: 10
-  },
-  convoThumbnailStyle: {
-    height: 75,
-    width: 75,
-    marginLeft: 10,
-    marginBottom: 10
   },
   imageStyle: {
     height: 300,

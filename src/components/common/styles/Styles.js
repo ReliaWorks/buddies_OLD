@@ -31,6 +31,13 @@ export const containerStyle = {
   elevation: 2
 };
 
+export const convoThumbnailStyle = {
+  height: 75,
+  width: 75,
+  marginLeft: 10,
+  marginBottom: 10
+};
+
 export const legalTextStyle = {
   alignSelf: 'center',
   color: 'blue',
