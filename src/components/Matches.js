@@ -16,27 +16,6 @@ class Matches extends Component {
     };
   }
 
-  renderConversation() {
-    const {
-        convoContainerStyle,
-        headerTextStyle
-       } = styles;
-
-    return (
-          <View style={{ flexDirection: 'row' }}>
-            <Image
-              style={convoThumbnailStyle}
-              source={profileImage}
-            />
-            <View style={convoContainerStyle}>
-              <Text style={headerTextStyle}>
-                Love your profile. Running rocks!
-                </Text>
-            </View>
-          </View>
-    );
-  }
-
   render() {
     return (
       <View style={containerStyle}>
@@ -98,22 +77,6 @@ const styles = {
   container: {
     flex: 1,
     marginTop: 10,
-  },
-  convoContainerStyle: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10,
-    alignItems: 'stretch',
-    justifyContent: 'center'
   },
   headerContentStyle: {
     flexDirection: 'column',
