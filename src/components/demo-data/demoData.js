@@ -2,9 +2,9 @@ export default sampleData = [
   {
     'gender': 'male',
     'name': {
-      'title': 'mr',
-      'first': 'aiden',
-      'last': 'lucas'
+      'title': 'Mr',
+      'first': 'Jorge',
+      'last': 'Lucas'
     },
     'location': {
       'street': '1446 oak lawn ave',
@@ -299,7 +299,7 @@ export default sampleData = [
     'gender': 'female',
     'name': {
       'title': 'mrs',
-      'first': 'janice',
+      'first': 'janice with a long name test',
       'last': 'holt'
     },
     'location': {
