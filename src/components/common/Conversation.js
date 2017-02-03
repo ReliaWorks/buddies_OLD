@@ -1,46 +1,48 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { convoThumbnailStyle, textStyle } from './styles';
+import React, { Component } from 'react';
+//import { Platform, Text, View } from 'react-native';
+import { GiftedChat, Actions, Bubble } from 'react-native-gifted-chat';
+//import CustomActions from './CustomActions';
+//import CustomView from './CustomView';
 
-const Conversation = (props) => (
-    <View style={styles.container}>
-      <Image
-        style={convoThumbnailStyle}
-        source={{ uri: props.picture.large }}
-      />
-      <View style={styles.convoContainerStyle}>
-        <Text style={textStyle}>
-          {`${props.name.first} ${props.name.last}`}
-        </Text>
-      </View>
-    </View>
-);
-
-const styles = {
-  container: {
-    alignItems: 'center',
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    padding: 10,
-  },
-  convoContainerStyle: {
-    flexDirection: 'row',
-//    backgroundColor: 'purple',
-//    borderWidth: 1,
-//    borderRadius: 2,
-//    borderColor: '#ddd',
-//    borderBottomWidth: 0,
-//    shadowColor: '#000',
-//    shadowOffset: { width: 0, height: 2 },
-//    shadowOpacity: 0.1,
-//    shadowRadius: 2,
-//    elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 1,
-    alignItems: 'stretch',
-  },
-};
-
+class Conversation extends Component {
+  constructor(props) {
+      super(props);
+      this.state = { messages: [] };
+      this.onSend = this.onSend.bind(this);
+    }
+    componentWillMount() {
+      this.setState({
+        messages: [
+          {
+            _id: 1,
+            text: 'Great to meet you',
+            createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
+            user: {
+              _id: 2,
+              name: 'React Native',
+              avatar: 'https://randomuser.me/api/portraits/med/men/4.jpg',
+            },
+          },
+        ],
+      });
+    }
+    onSend(messages = []) {
+      this.setState((previousState) => {
+        return {
+          messages: GiftedChat.append(previousState.messages, messages),
+        };
+      });
+    }
+    render() {
+      return (
+        <GiftedChat
+          messages={this.state.messages}
+          onSend={this.onSend}
+          user={{
+            _id: 1,
+          }}
+        />
+      );
+    }
+}
 export { Conversation };

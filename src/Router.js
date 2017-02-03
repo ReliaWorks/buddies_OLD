@@ -6,6 +6,7 @@ import BrowseBuddies from './components/BrowseBuddies';
 import UserEdit from './components/UserEdit';
 import UserView from './components/UserView';
 import Matches from './components/Matches';
+import { Conversation } from './components/common';
 import { buttonIconStyle, navigationBarStyle } from './components/common/styles';
 
 const sprocketImageLocation = require('./components/common/img/224_gear.png');
@@ -52,6 +53,11 @@ const RouterComponent = () => {
           title="Matches"
           leftTitle="Home"
           onLeft={() => Actions.main()}
+        />
+        <Scene
+          key="conversation"
+          component={Conversation}
+          title="Conversation"
         />
       </Scene>
     </Router>
