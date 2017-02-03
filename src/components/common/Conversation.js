@@ -10,6 +10,7 @@ class Conversation extends Component {
       this.state = { messages: [] };
       this.onSend = this.onSend.bind(this);
     }
+    
     componentWillMount() {
       this.setState({
         messages: [
