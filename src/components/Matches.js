@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { Image, ListView, Text, View } from 'react-native';
-import { containerStyle, convoThumbnailStyle, textStyle } from './common/styles/Styles';
-import { Conversation } from './common';
-import sampleData from './demo-data/demoData.js';
-
-const profileImage = require('./common/img/runningbuddy.png');
+import { containerStyle, textStyle } from './common/styles/Styles';
+import { Conversation, NoConvoMatch } from './common';
+import sampleData from './demo-data/demoData';
+import matchesSampleData from './demo-data/matchesSampleData';
 
 class Matches extends Component {
   constructor() {
     super();
 
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    const conversationsDS = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    const matchesDS = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      dataSource: ds.cloneWithRows(sampleData),
+      dataSource: conversationsDS.cloneWithRows(sampleData),
+      matchesDataSource: matchesDS.cloneWithRows(matchesSampleData),
     };
   }
 
@@ -27,24 +28,12 @@ class Matches extends Component {
           }}
         >
           <Text style={textStyle}>Matches</Text>
-          <View style={styles.thumbnailContainerStyle}>
-            <Image
-              style={styles.noConvoThumbnailStyle}
-              source={profileImage}
-            />
-            <Image
-              style={styles.noConvoThumbnailStyle}
-              source={profileImage}
-            />
-            <Image
-              style={styles.noConvoThumbnailStyle}
-              source={profileImage}
-            />
-            <Image
-              style={styles.noConvoThumbnailStyle}
-              source={profileImage}
-            />
-          </View>
+          <ListView
+            style={styles.thumbnailContainerStyle}
+            dataSource={this.state.matchesDataSource}
+            renderRow={(matchData) => <NoConvoMatch {...matchData} />}
+            horizontal
+          />
         </View>
         <View
           style={{
@@ -57,21 +46,30 @@ class Matches extends Component {
           <ListView
             style={styles.container}
             dataSource={this.state.dataSource}
-            renderRow={(data) => <Conversation {...data} />
-
-            }
+            renderRow={(data) => <Conversation {...data} />}
           />
         </View>
       </View>
     );
   }
 }
-
-//{this.renderConversation()}
-//{this.renderConversation()}
-//{this.renderConversation()}
-//{this.renderConversation()}
-
+/*
+<Image
+  style={styles.noConvoThumbnailStyle}
+  source={profileImage}
+/>
+<Image
+  style={styles.noConvoThumbnailStyle}
+  source={profileImage}
+/>
+<Image
+  style={styles.noConvoThumbnailStyle}
+  source={profileImage}
+/>
+<Image
+  style={styles.noConvoThumbnailStyle}
+  source={profileImage}
+/>*/
 
 const styles = {
   container: {
@@ -97,11 +95,9 @@ const styles = {
     width: null
   },
   thumbnailContainerStyle: {
+    flex: 1,
+    marginRight: 10,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10
   }
 };
 
