@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { Platform, Text, View } from 'react-native';
-import { GiftedChat, Actions, Bubble } from 'react-native-gifted-chat';
+import { GiftedChat } from 'react-native-gifted-chat';
 //import CustomActions from './CustomActions';
 //import CustomView from './CustomView';
 
