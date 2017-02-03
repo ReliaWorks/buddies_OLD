@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Image, ListView, Text, View } from 'react-native';
+import { ListView, Text, View } from 'react-native';
 import { containerStyle, textStyle } from './common/styles/Styles';
-import { Conversation, NoConvoMatch } from './common';
+import { ConversationListItem, NoConvoMatch } from './common';
 import sampleData from './demo-data/demoData';
 import matchesSampleData from './demo-data/matchesSampleData';
 
@@ -46,7 +46,7 @@ class Matches extends Component {
           <ListView
             style={styles.container}
             dataSource={this.state.dataSource}
-            renderRow={(data) => <Conversation {...data} />}
+            renderRow={(data) => <ConversationListItem {...data} />}
           />
         </View>
       </View>

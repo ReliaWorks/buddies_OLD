@@ -5,6 +5,9 @@
       "no-undef": 0,
       "no-underscore-dangle": 0,
       "comma-spacing": 0,
-      "max-len": 0
+      "max-len": 0,
+      "global-require": 0,
+      "react/require-extension": 0,
+      "object-shorthand": 0,
   }
 }

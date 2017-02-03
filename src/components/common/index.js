@@ -6,4 +6,5 @@ export * from './Input';
 export * from './Spinner';
 export * from './Confirm';
 export * from './Conversation';
+export * from './ConversationListItem';
 export * from './NoConvoMatch';
