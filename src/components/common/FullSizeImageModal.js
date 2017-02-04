@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, Modal, Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import Button from './Button';
 
 const FullSizeImageModal = ({ visible, imageURI, onClose }) => {
   return (
