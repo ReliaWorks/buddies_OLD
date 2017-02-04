@@ -1,5 +1,5 @@
 import React from 'react';
-import { Actions, Scene, Router } from 'react-native-router-flux';
+import { ActionConst, Actions, Scene, Router } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import Settings from './components/Settings';
 import BrowseBuddies from './components/BrowseBuddies';
@@ -18,7 +18,7 @@ const RouterComponent = () => {
       <Scene key="root">
         <Scene key="login" direction="vertical" component={LoginForm} title="Buddies" initial />
       </Scene>
-      <Scene key="main">
+      <Scene key="main" type={ActionConst.RESET}>
         <Scene
           key="browse"
           component={BrowseBuddies}
@@ -29,6 +29,7 @@ const RouterComponent = () => {
           onLeft={() => Actions.profileSettings()}
           rightButtonIconStyle={buttonIconStyle}
           onRight={() => Actions.matchesConversations()}
+          type={ActionConst.RESET}
           initial
         />
       </Scene>
@@ -44,7 +45,11 @@ const RouterComponent = () => {
           initial
         />
         <Scene key="userEdit" component={UserEdit} title="Edit Profile" />
-        <Scene key="settings" component={Settings} title="Settings" />
+        <Scene
+          key="settings"
+          component={Settings}
+          title="Settings"
+        />
       </Scene>
       <Scene key="matchesConversations">
         <Scene
