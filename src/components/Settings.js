@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Text, TextInput, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { LoginButton } from 'react-native-fbsdk';
-import { Button } from './common';
+//import { Button } from './common';
 import { buttonStyle, legalTextStyle, textStyle } from './common/styles';
 
 class Settings extends Component {
