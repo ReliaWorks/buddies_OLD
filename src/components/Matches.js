@@ -53,23 +53,6 @@ class Matches extends Component {
     );
   }
 }
-/*
-<Image
-  style={styles.noConvoThumbnailStyle}
-  source={profileImage}
-/>
-<Image
-  style={styles.noConvoThumbnailStyle}
-  source={profileImage}
-/>
-<Image
-  style={styles.noConvoThumbnailStyle}
-  source={profileImage}
-/>
-<Image
-  style={styles.noConvoThumbnailStyle}
-  source={profileImage}
-/>*/
 
 const styles = {
   container: {

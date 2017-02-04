@@ -43,7 +43,7 @@ const RouterComponent = () => {
           onRight={() => Actions.main()}
           initial
         />
-        <Scene key="userEdit" component={UserEdit} title="Buddies" />
+        <Scene key="userEdit" component={UserEdit} title="Edit Profile" />
         <Scene key="settings" component={Settings} title="Settings" />
       </Scene>
       <Scene key="matchesConversations">

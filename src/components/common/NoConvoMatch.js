@@ -1,13 +1,16 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 const NoConvoMatch = (props) => (
+  <TouchableOpacity onPress={() => { Actions.conversation(); }}>
     <View>
       <Image
         style={styles.noConvoThumbnailStyle}
         source={{ uri: props.picture.large }}
       />
     </View>
+  </TouchableOpacity>
 );
 
 const styles = {
