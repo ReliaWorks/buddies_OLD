@@ -38,6 +38,11 @@ export const convoThumbnailStyle = {
   marginBottom: 10
 };
 
+export const headerTextStyle = {
+  fontSize: 20,
+  padding: 10
+};
+
 export const legalTextStyle = {
   alignSelf: 'center',
   color: 'blue',
@@ -61,7 +66,7 @@ export const spinnerStyle = {
 };
 
 export const textStyle = {
-  fontSize: 20,
+  fontSize: 18,
 //  textAlign: 'center',
   margin: 10
 };
@@ -70,9 +75,6 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around'
-  },
-  headerTextStyle: {
-    fontSize: 18
   },
   thumbnailStyle: {
     height: 50,

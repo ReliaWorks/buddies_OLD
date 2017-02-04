@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { CardItem } from './common';
+import { headerTextStyle, textStyle } from './common/styles';
 
 class Activity extends Component {
   onRowPress() {
@@ -9,16 +10,26 @@ class Activity extends Component {
   }
 
   render() {
-    const { name } = this.props.activity;
+    const { name, attribute1, attribute2 } = this.props.activity;
 
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
         <CardItem>
-          <Text style={styles.titleStyle}>
+          <Text style={headerTextStyle}>
             {name}
           </Text>
         </CardItem>
+        <View style={styles.containerStyle}>
+          <Text style={textStyle}>
+            {attribute1}
+          </Text>
+        </View>
+        <View style={styles.containerStyle}>
+          <Text style={textStyle}>
+            {attribute2}
+          </Text>
+        </View>
       </View>
       </TouchableWithoutFeedback>
     );
@@ -26,9 +37,8 @@ class Activity extends Component {
 }
 
 const styles = {
-  titleStyle: {
-    fontSize: 18,
-    paddingLeft: 15
+  containerStyle: {
+    marginLeft: 10
   }
 };
 
