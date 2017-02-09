@@ -5,7 +5,6 @@ import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import RouterComponent from './Router';
-//import { View, Text } from 'react-native';
 
 const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
