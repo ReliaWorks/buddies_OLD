@@ -9,6 +9,8 @@ import Matches from './components/Matches';
 import { Conversation } from './components/common';
 import { buttonIconStyle, navigationBarStyle } from './components/common/styles';
 
+const homeImageLocation = require('./components/common/img/home.png');
+const wrenchImageLocation = require('./components/common/img/wrench.png');
 const sprocketImageLocation = require('./components/common/img/224_gear.png');
 const chatImageLocation = require('./components/common/img/224_chat.png');
 
@@ -38,8 +40,11 @@ const RouterComponent = () => {
           key="userView"
           direction="vertical"
           component={UserView}
-          title="Profile Settings"
-          rightTitle="Home"
+          title="My Profile"
+          leftButtonImage={wrenchImageLocation}
+          leftButtonIconStyle={buttonIconStyle}
+          onLeft={() => Actions.settings()}
+          rightButtonImage={homeImageLocation}
           rightButtonIconStyle={buttonIconStyle}
           onRight={() => Actions.main()}
           initial
@@ -56,7 +61,8 @@ const RouterComponent = () => {
           key="matches"
           component={Matches}
           title="Matches"
-          leftTitle="Home"
+          leftButtonImage={homeImageLocation}
+          leftButtonIconStyle={buttonIconStyle}
           onLeft={() => Actions.main()}
         />
         <Scene

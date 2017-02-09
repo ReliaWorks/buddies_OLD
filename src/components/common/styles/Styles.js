@@ -1,4 +1,5 @@
 //const BRAND_PRIMARY_COLOR = '#BA77FF';
+const BRAND_PRIMARY_COLOR = '#ff7200';
 
 export const backgroundImage = {
   flex: 1,
@@ -58,7 +59,7 @@ export const loginButtonStyle = {
 };
 
 export const navigationBarStyle = {
-//  backgroundColor: BRAND_PRIMARY_COLOR
+  backgroundColor: BRAND_PRIMARY_COLOR
 };
 
 export const spinnerStyle = {

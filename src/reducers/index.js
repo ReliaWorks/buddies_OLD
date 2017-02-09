@@ -4,7 +4,7 @@ import ActivityFormReducer from './ActivityFormReducer';
 import ActivityReducer from './ActivityReducer';
 
 export default combineReducers({
-//  auth: AuthReducer,
+  //auth: AuthReducer,
   activityForm: ActivityFormReducer,
   activities: ActivityReducer
 });

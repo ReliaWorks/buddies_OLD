@@ -1,7 +1,8 @@
-//import { Actions } from 'react-native-router-flux';/
-//import { AccessToken,
-//         GraphRequest,
-//         GraphRequestManager } from 'react-native-fbsdk';
+import { Actions } from 'react-native-router-flux';
+import {
+//  AccessToken,
+  GraphRequest,
+  GraphRequestManager } from 'react-native-fbsdk';
 import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
@@ -21,7 +22,6 @@ const responseCallback = ((error, result) => {
   console.log(result);
   return (response);
 });
-
 
 export const loginUser = ({ email, first_name }) => {
   return (dispatch) => {

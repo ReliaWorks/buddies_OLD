@@ -14,7 +14,7 @@ import { backgroundImage, loginButtonStyle, legalTextStyle } from './common/styl
 const backgroundImageURL = require('./common/img/WorkoutBuddiesImage.jpg');
 
 class LoginForm extends Component {
-  state = { email: '', first_name: '', last_name: '', error: '', loading: false, loggedIn: false };
+  state = { email: '', first_name: '', error: '', loading: false, loggedIn: false };
 
   componentWillMount() {
     console.log(AccessToken);
@@ -30,7 +30,6 @@ class LoginForm extends Component {
   }
 /*
   initUser(token) {
-
     const profileRequestParams = {
       fields: {
         string: 'id, name, email, first_name, last_name, gender'
@@ -51,11 +50,7 @@ class LoginForm extends Component {
     );
     // Start the graph request.
     new GraphRequestManager().addRequest(profileRequest).start();
-    console.log('After new GraphRequestManager');
-    console.log(response.json.first_name);
     this.setState({ first_name: response.json.first_name, last_name: response.json.last_name });
-    console.log(this);
-    });
     this.setState({ name: req.name });
     this.setState({ email: req.email });
     fetch('https://graph.facebook.com/v2.5/me?fields=email,name,friends&access_token=' + token)
@@ -71,14 +66,13 @@ class LoginForm extends Component {
       user.loading = false
       user.loggedIn = true
       user.avatar = setAvatar(json.id)
-*/
-  /*    })
+
+      })
       .catch(() => {
         reject('ERROR GETTING DATA FROM FACEBOOK')
       })
   }
 */
-
   renderLoginForm() {
     return (
       <View style={styles.container}>
@@ -123,8 +117,8 @@ const styles = {
     justifyContent: 'flex-end'
   }
 };
-
-/*const mapStateToProps = ({ auth }) => {
+/*
+const mapStateToProps = ({ auth }) => {
   const { token } = auth;
 
   return { token };
